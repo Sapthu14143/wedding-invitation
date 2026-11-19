@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Swarna ❤️ Punith | Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --maroon: #481315;
+  --dark: #2b090b;
+  --gold: #d9b46b;
+  --light-gold: #f7e5b6;
+  --cream: #fff8eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--maroon);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.kannada {
+  font-family: 'Noto Sans Kannada', sans-serif;
+  line-height: 2;
+}
+
+.script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.gold { color: var(--gold); }
+
+/* =========================
+   ANIMATED GOLDEN DOORS
+========================= */
+
+#opening {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.door {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 2;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 35px,
+      rgba(255,220,140,.12) 36px 39px
+    ),
+    linear-gradient(90deg,#3b0b0e,#82401e,#4a1112);
+  border: 7px double var(--gold);
+  transition: transform 2.2s cubic-bezier(.7,0,.2,1);
+}
+
+.left-door {
+  left: 0;
+  transform-origin: left center;
+  border-right: 4px solid var(--gold);
+}
+
+.right-door {
+  right: 0;
+  transform-origin: right center;
+  border-left: 4px solid var(--gold);
+}
+
+#opening.open .left-door {
+  transform: perspective(1200px) rotateY(-110deg);
+}
+
+#opening.open .right-door {
+  transform: perspective(1200px) rotateY(110deg);
+}
+
+.door-pattern {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: clamp(35px,7vw,75px);
+  color: var(--gold);
+}
+
+.door-pattern::before {
+  content: "❀";
+}
+
+.open-content {
+  position: relative;
+  z-index: 3;
+  color: var(--light-gold);
+  padding: 20px;
+  max-width: 600px;
+}
+
+.open-content h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(45px,8vw,75px);
+  font-weight: normal;
+  margin: 15px 0;
+}
+
+.open-content p {
+  margin: 12px;
+}
+
+.open-button {
+  background: var(--gold);
+  color: var(--dark);
+  padding: 14px 32px;
+  border: 1px solid var(--light-gold);
+  border-radius: 35px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: inherit;
+  margin-top: 20px;
+}
+
+.open-button:hover {
+  background: var(--light-gold);
+}
+
+/* =========================
+   MAIN HERO SECTION
+========================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 20px;
+  color: var(--light-gold);
+  background:
+    linear-gradient(rgba(49,8,10,.87),rgba(49,8,10,.92)),
+    url('assets/wedding-bg.jpg') center/cover;
+  border: 9px double var(--gold);
+  outline: 4px solid var(--maroon);
+  outline-offset: -17px;
+}
+
+.om {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-family: 'Cinzel',serif;
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+
+.hero h1 {
+  font-family: 'Great Vibes',cursive;
+  font-size: clamp(65px,11vw,110px);
+  font-weight: normal;
+  margin: 12px;
+}
+
+.hero .kannada {
+  font-size: 18px;
+}
+
+.hero-heart {
+  font-size: 30px;
+  margin: 12px;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+  padding: 75px 20px;
+}
+
+.section-title {
+  font-family: 'Cinzel',serif;
+  font-size: clamp(21px,4vw,29px);
+  color: #9a6429;
+  margin-bottom: 15px;
+}
+
+.decor {
+  color: #bd9250;
+  font-size: 28px;
+  margin: 20px;
+}
+
+.description {
+  max-width: 750px;
+  margin: auto;
+  line-height: 2.1;
+}
+
+.names {
+  font-family: 'Great Vibes',cursive;
+  font-size: clamp(48px,8vw,76px);
+  color: #923a2c;
+  margin: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 13px 27px;
+  margin: 15px 5px;
+  border-radius: 30px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #f0d79e;
+}
+
+/* =========================
+   COUPLE SECTION
+========================= */
+
+.couple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 45px;
+  margin-top: 35px;
+}
+
+.person {
+  width: 270px;
+}
+
+.person img {
+  width: 220px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 120px 120px 15px 15px;
+  border: 5px solid var(--gold);
+  padding: 4px;
+  background: white;
+}
+
+.person h3 {
+  color: #a16d32;
+  font-family: 'Cinzel',serif;
+  margin: 17px;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+  background: #f8ebd2;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin: 35px 0;
+}
+
+.time {
+  min-width: 85px;
+  padding: 18px 12px;
+  background: var(--maroon);
+  color: var(--light-gold);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+}
+
+.time strong {
+  display: block;
+  font-size: 29px;
+  font-family: 'Cinzel',serif;
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.events {
+  background: var(--maroon);
+  color: var(--light-gold);
+  border-top: 7px double var(--gold);
+  border-bottom: 7px double var(--gold);
+}
+
+.events .section-title {
+  color: var(--gold);
+}
+
+.event-card {
+  max-width: 650px;
+  margin: 30px auto;
+  padding: 35px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  background: rgba(255,255,255,.035);
+  line-height: 2.2;
+}
+
+.event-card h2 {
+  font-family: 'Great Vibes',cursive;
+  font-size: 46px;
+  color: var(--gold);
+  font-weight: normal;
+}
+
+.event-icon {
+  font-size: 40px;
+}
+
+.event-divider {
+  color: var(--gold);
+  font-size: 23px;
+  margin: 18px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 230px;
+  height: 270px;
+  object-fit: cover;
+  border: 5px solid var(--gold);
+  border-radius: 13px;
+  background: white;
+}
+
+/* =========================
+   INVITATION SHARE
+========================= */
+
+.share-section {
+  background: #f8ebd2;
+}
+
+footer {
+  background: var(--dark);
+  color: var(--light-gold);
+  padding: 45px 20px;
+  line-height: 2;
+  border-top: 5px double var(--gold);
+}
+
+footer .names {
+  color: var(--light-gold);
+}
+
+@media(max-width:600px) {
+  section {
+    padding: 55px 15px;
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+
+  .event-card {
+    padding: 25px 12px;
+  }
+
+  .gallery img {
+    width: 85%;
+    height: 260px;
+  }
+
+  .time {
+    min-width: 70px;
+    padding: 14px 8px;
+  }
+
+  .time strong {
+    font-size: 23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING GOLDEN DOORS -->
+
+<div id="opening">
+
+  <div class="door left-door">
+    <div class="door-pattern"></div>
+  </div>
+
+  <div class="door right-door">
+    <div class="door-pattern"></div>
+  </div>
+
+  <div class="open-content">
+
+    <div style="font-size:45px">॥ ॐ ॥</div>
+
+    <p class="kannada">
+      ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ
+    </p>
+
+    <h1>Swarna & Punith</h1>
+
+    <p class="kannada">
+      ಶುಭ ವಿವಾಹಕ್ಕೆ ಆತ್ಮೀಯ ಸ್ವಾಗತ
+    </p>
+
+    <p>28 & 29 NOVEMBER 2026</p>
+
+    <button class="open-button" onclick="openInvitation()">
+      OPEN INVITATION ♥
+    </button>
+
+  </div>
+</div>
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="om">॥ ॐ ಶ್ರೀ ಗಣೇಶಾಯ ನಮಃ ॥</div>
+
+  <p class="subtitle">WEDDING INVITATION</p>
+
+  <h1>Wedding Bells</h1>
+
+  <p class="kannada">
+    ನಮ್ಮ ಜೀವನದ ಸುಂದರ ಕ್ಷಣಕ್ಕೆ
+    ನಿಮ್ಮನ್ನು ಪ್ರೀತಿಯಿಂದ ಆಹ್ವಾನಿಸುತ್ತೇವೆ
+  </p>
+
+  <div class="decor">❀ ❀ ❀</div>
+
+  <h1>Swarna V</h1>
+
+  <div class="hero-heart">♥</div>
+
+  <h1>Punith M</h1>
+
+  <p>TOGETHER FOREVER</p>
+
+  <p class="kannada">
+    ನಿಮ್ಮ ಆಗಮನವೇ ನಮಗೆ ಆಶೀರ್ವಾದ
+  </p>
+
+  <a href="#invitation" class="btn">
+    VIEW INVITATION
+  </a>
+
+</header>
+
+<!-- INVITATION MESSAGE -->
+
+<section id="invitation">
+
+  <p class="section-title">
+    WITH THE BLESSINGS OF OUR FAMILIES
+  </p>
+
+  <div class="decor">✿ ❀ ✿</div>
+
+  <p class="kannada description">
+    ನಮ್ಮ ಕುಟುಂಬದ ಹಿರಿಯರ ಆಶೀರ್ವಾದದೊಂದಿಗೆ,
+    ನಮ್ಮ ಜೀವನದ ಹೊಸ ಅಧ್ಯಾಯಕ್ಕೆ ನಾಂದಿ ಹಾಡುತ್ತಿದ್ದೇವೆ.
+    ಈ ಶುಭ ಸಂದರ್ಭದಲ್ಲಿ ತಾವು ಕುಟುಂಬ ಸಮೇತರಾಗಿ ಆಗಮಿಸಿ
+    ವಧು ವರರನ್ನು ಆಶೀರ್ವದಿಸಬೇಕಾಗಿ ಪ್ರೀತಿಯಿಂದ ವಿನಂತಿಸುತ್ತೇವೆ.
+  </p>
+
+  <div class="decor">❀</div>
+
+  <p class="description">
+    Together with our families, we joyfully invite you
+    to celebrate our wedding and bless our new journey
+    of love, happiness and togetherness.
+  </p>
+
+  <div class="names">Swarna V & Punith M</div>
+
+  <p class="kannada">ಶುಭ ವಿವಾಹ ಆಮಂತ್ರಣ</p>
+
+</section>
+
+<!-- BRIDE AND GROOM -->
+
+<section style="background:#f8ebd2">
+
+  <p class="section-title">THE BRIDE & THE GROOM</p>
+
+  <p class="kannada">ವಧು ಮತ್ತು ವರ</p>
+
+  <div class="couple">
+
+    <div class="person">
+
+      <img src="assets/bride.jpg" alt="Bride Swarna V">
+
+      <h3>THE BRIDE | ವಧು</h3>
+
+      <h2>Swarna V</h2>
+
+    </div>
+
+    <div class="person">
+
+      <img src="assets/groom.jpg" alt="Groom Punith M">
+
+      <h3>THE GROOM | ವರ</h3>
+
+      <h2>Punith M</h2>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- COUNTDOWN -->
+
+<section class="countdown-section">
+
+  <p class="section-title">
+    COUNTDOWN TO OUR BIG DAY
+  </p>
+
+  <p class="kannada">
+    ನಮ್ಮ ವಿವಾಹದ ದಿನಕ್ಕೆ ಕ್ಷಣಗಣನೆ
+  </p>
+
+  <div class="decor">✿ ❀ ✿</div>
+
+  <div class="countdown">
+
+    <div class="time">
+      <strong id="days">00</strong>
+      DAYS
+    </div>
+
+    <div class="time">
+      <strong id="hours">00</strong>
+      HOURS
+    </div>
+
+    <div class="time">
+      <strong id="minutes">00</strong>
+      MINUTES
+    </div>
+
+    <div class="time">
+      <strong id="seconds">00</strong>
+      SECONDS
+    </div>
+
+  </div>
+
+  <h2 class="names">29 November 2026</h2>
+
+  <p>Sunday | ಭಾನುವಾರ</p>
+
+</section>
+
+<!-- RECEPTION AND WEDDING DETAILS -->
+
+<section class="events">
+
+  <p class="section-title">
+    OUR WEDDING CELEBRATIONS
+  </p>
+
+  <p class="kannada">
+    ನಮ್ಮ ವಿವಾಹ ಮಹೋತ್ಸವ
+  </p>
+
+  <div class="decor">✿ ❀ ✿</div>
+
+  <!-- RECEPTION -->
+
+  <div class="event-card">
+
+    <div class="event-icon">💐</div>
+
+    <h2>Wedding Reception</h2>
+
+    <h3 class="kannada">ಆರತಕ್ಷತೆ</h3>
+
+    <div class="event-divider">✿ ❀ ✿</div>
+
+    <p>DATE | ದಿನಾಂಕ</p>
+
+    <h3>Saturday, 28 November 2026</h3>
+
+    <p class="kannada">
+      ಶನಿವಾರ, ೨೮ ನವೆಂಬರ್ ೨೦೨೬
+    </p>
+
+    <p>TIME | ಸಮಯ</p>
+
+    <h2>6:30 PM Onwards</h2>
+
+    <p class="kannada">
+      ಸಂಜೆ ೬:೩೦ ಗಂಟೆಯಿಂದ
+    </p>
+
+    <div class="event-divider">✿ ❀ ✿</div>
+
+    <p>VENUE | ಸ್ಥಳ</p>
+
+    <h3>
+      Shree Guru Raghavendra Kalyana Mantapa
+    </h3>
+
+    <p>
+      Railway Station Road, Challakere
+    </p>
+
+    <p class="kannada">
+      ಶ್ರೀ ಗುರು ರಾಘವೇಂದ್ರ ಕಲ್ಯಾಣ ಮಂಟಪ,
+      ರೈಲ್ವೆ ಸ್ಟೇಷನ್ ರಸ್ತೆ, ಚಳ್ಳಕೆರೆ
+    </p>
+
+  </div>
+
+  <!-- WEDDING -->
+
+  <div class="event-card">
+
+    <div class="event-icon">💍</div>
+
+    <h2>Wedding Ceremony</h2>
+
+    <h3 class="kannada">ಶುಭ ವಿವಾಹ</h3>
+
+    <div class="event-divider">✿ ❀ ✿</div>
+
+    <p>DATE | ದಿನಾಂಕ</p>
+
+    <h3>Sunday, 29 November 2026</h3>
+
+    <p class="kannada">
+      ಭಾನುವಾರ, ೨೯ ನವೆಂಬರ್ ೨೦೨೬
+    </p>
+
+    <p>MUHURTHAM | ಶುಭ ಮುಹೂರ್ತ</p>
+
+    <h2>9:30 AM – 10:30 AM</h2>
+
+    <p class="kannada">
+      ಬೆಳಿಗ್ಗೆ ೯:೩೦ ರಿಂದ ೧೦:೩೦ ರವರೆಗೆ
+    </p>
+
+    <div class="event-divider">✿ ❀ ✿</div>
+
+    <p>VENUE | ಸ್ಥಳ</p>
+
+    <h3>
+      Shree Guru Raghavendra Kalyana Mantapa
+    </h3>
+
+    <p>
+      Railway Station Road, Challakere
+    </p>
+
+    <p class="kannada">
+      ಶ್ರೀ ಗುರು ರಾಘವೇಂದ್ರ ಕಲ್ಯಾಣ ಮಂಟಪ,
+      ರೈಲ್ವೆ ಸ್ಟೇಷನ್ ರಸ್ತೆ, ಚಳ್ಳಕೆರೆ
+    </p>
+
+    <a
+      class="btn"
+      href="https://www.google.com/maps/search/?api=1&query=Shree+Guru+Raghavendra+Kalyana+Mantapa+Railway+Station+Road+Challakere"
+      target="_blank"
+      rel="noopener">
+      GET DIRECTIONS / ಸ್ಥಳದ ಮಾಹಿತಿ
+    </a>
+
+  </div>
+
+</section>
+
+<!-- PHOTO GALLERY -->
+
+<section>
+
+  <p class="section-title">OUR BEAUTIFUL MOMENTS</p>
+
+  <p class="kannada">
+    ನಮ್ಮ ಸುಂದರ ಕ್ಷಣಗಳು
+  </p>
+
+  <div class="decor">❀ ❀ ❀</div>
+
+  <div class="gallery">
+
+    <img src="assets/photo1.jpg" alt="Couple photograph 1">
+
+    <img src="assets/photo2.jpg" alt="Couple photograph 2">
+
+    <img src="assets/photo3.jpg" alt="Couple photograph 3">
+
+  </div>
+
+</section>
+
+<!-- SHARE INVITATION -->
+
+<section class="share-section">
+
+  <p class="section-title">
+    YOUR PRESENCE IS OUR GIFT
+  </p>
+
+  <div class="decor">✿ ❀ ✿</div>
+
+  <h2 class="names">Swarna V & Punith M</h2>
+
+  <p class="kannada description">
+    ನಿಮ್ಮ ಪ್ರೀತಿ, ಆಶೀರ್ವಾದ ಮತ್ತು ಉಪಸ್ಥಿತಿಯನ್ನು
+    ಹಾರ್ದಿಕವಾಗಿ ಬಯಸುತ್ತೇವೆ.
+    ದಯವಿಟ್ಟು ಆಗಮಿಸಿ ನಮ್ಮ ಸಂತೋಷವನ್ನು ಹೆಚ್ಚಿಸಬೇಕಾಗಿ ವಿನಂತಿ.
+  </p>
+
+  <br>
+
+  <p class="description">
+    We look forward to celebrating these beautiful
+    moments with you. Your presence and blessings
+    will make our celebration more special.
+  </p>
+
+  <button class="btn" onclick="shareInvitation()">
+    SHARE INVITATION ON WHATSAPP ♥
+  </button>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div style="font-size:40px">❀</div>
+
+  <h2 class="names">
+    Swarna V & Punith M
+  </h2>
+
+  <p class="kannada">
+    ನಿಮ್ಮೆಲ್ಲರಿಗೂ ಆತ್ಮೀಯ ಸ್ವಾಗತ
+  </p>
+
+  <p>28 & 29 November 2026</p>
+
+  <p>Made with Love ♥</p>
+
+</footer>
+
+<script>
+
+/* OPEN GOLDEN DOORS */
+
+function openInvitation() {
+
+  const opening = document.getElementById("opening");
+
+  opening.classList.add("open");
+
+  setTimeout(function() {
+    opening.style.display = "none";
+  }, 2300);
+
+}
+
+/* LIVE WEDDING COUNTDOWN
+   Date and time in Indian Standard Time */
+
+const weddingDate =
+  new Date("2026-11-29T09:30:00+05:30").getTime();
+
+function updateCountdown() {
+
+  const now = Date.now();
+
+  const distance = weddingDate - now;
+
+  if (distance <= 0) {
+
+    document.querySelector(".countdown").innerHTML =
+      "THE WEDDING CELEBRATION HAS BEGUN! ❤️";
+
+    return;
+  }
+
+  document.getElementById("days").textContent =
+    Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  document.getElementById("hours").textContent =
+    Math.floor((distance % (1000 * 60 * 60 * 24)) /
+    (1000 * 60 * 60));
+
+  document.getElementById("minutes").textContent =
+    Math.floor((distance % (1000 * 60 * 60)) /
+    (1000 * 60));
+
+  document.getElementById("seconds").textContent =
+    Math.floor((distance % (1000 * 60)) / 1000);
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+/* WHATSAPP SHARING */
+
+function shareInvitation() {
+
+  const message =
+    "💐 WEDDING INVITATION 💐\n\n" +
+
+    "Swarna V ❤️ Punith M\n\n" +
+
+    "💐 RECEPTION | ಆರತಕ್ಷತೆ\n" +
+    "Saturday, 28 November 2026\n" +
+    "6:30 PM onwards\n\n" +
+
+    "💍 WEDDING | ಶುಭ ವಿವಾಹ\n" +
+    "Sunday, 29 November 2026\n" +
+    "Muhurtham: 9:30 AM – 10:30 AM\n\n" +
+
+    "📍 VENUE:\n" +
+    "Shree Guru Raghavendra Kalyana Mantapa,\n" +
+    "Railway Station Road, Challakere.\n\n" +
+
+    "ನಿಮ್ಮ ಆಗಮನ ಮತ್ತು ಆಶೀರ್ವಾದವನ್ನು " +
+    "ಪ್ರೀತಿಯಿಂದ ನಿರೀಕ್ಷಿಸುತ್ತೇವೆ. ❤️\n\n" +
+
+    "With Love,\nSwarna & Punith";
+
+  const whatsappURL =
+    "https://wa.me/?text=" +
+    encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+
+}
+
+</script>
+
+</body>
+</html>
